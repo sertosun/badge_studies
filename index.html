@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Badge</title>
+    <link rel="stylesheet" href="badge.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputBadge">
+        <div class="inputName">
+          <label for="name">Name</label>
+          <input type="text" placeholder="Name" id="name" oninput="changeName()"/>
+        </div>
+        <div class="inputPicture">
+          <label for="fileInput">Square photo</label>
+          <input type="file" id="fileInput" />
+        </div>
+        <div class="inputRole">
+            <label for="role">Role</label>
+          <select name="type" id="role" onchange="changeRole()">
+            <option value="accountant">Accountant</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="manager">Manager</option>
+            <option value="assistant">Assistant</option>
+          </select>
+        </div>
+        <div class="inputColor">
+            <label for="color">Gradient</label>
+          <select name="color" id="color" onchange="changeColor()">
+            <option value="0" disabled hidden selected>Choose Your Color</option>
+            <option value="red">Red > Blue</option>
+            <option value="green">Green > Blue</option>
+            <option value="pink">Pink > Red</option>
+            <option value="gold">Gold > Red</option>
+            <option value="orange">Orange > Yellow</option>
+            <option value="grey">Grau > Schwarz</option>
+            <option value="violett">Violett > Blue</option>
+            <option value="lightblue">Lightblue > Lime</option>
+          </select>
+        </div>
+        <div class="downloadBadge">
+          <button id="download" onclick="download()">Download badge</button>
+        </div>
+      </div>
+      <div class="displayBadge">
+        <div class="gradientBox" id="gradientBox">
+          <div class="inputBox">
+            <div class="roleBadgeBox">
+              <p id="roleBadge">Your Role</p>
+            </div>
+            <div class="nameBox">
+              <h1 id="nameBadge">Your name here</h1>
+              <div class="photoBadge" id="photoBadge"></div>
+            </div>
+            <div class="footerBadgeBox">
+             <div class="evbLogo">Your Badge</div>
+              <p class="evbText">Your Badge GmbH 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <script src="badge.js"></script>
+  </body>
+</html>
